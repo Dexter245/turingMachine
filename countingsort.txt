@@ -1,0 +1,44 @@
+# Turing-Maschine die Buchstaben aus dem festen Alphabet {a, b, c} sortiert
+
+# Anzahl Bänder
+2
+
+# Voreinstellung der Bänder
+1:abaccbcaba
+1:_
+
+# Zustände
+S,A,B,C,F
+
+# Start
+S
+
+# Accepted
+F
+
+# Transitionen
+S,__ -> F,__,NN
+S,a_ -> A,a_,NN
+S,b_ -> A,b_,NN
+S,c_ -> A,c_,NN
+
+A,a_ -> A,aa,RR
+A,b_ -> A,b_,RN
+A,c_ -> A,c_,RN
+A,__ -> B,__,LN
+
+B,a_ -> B,a_,LN
+B,b_ -> B,bb,LR
+B,c_ -> B,c_,LN
+B,__ -> C,__,RN
+
+C,a_ -> C,a_,RN
+C,b_ -> C,b_,RN
+C,c_ -> C,cc,RR
+C,__ -> F,__,NN
+
+# Ausgabe:
+#abaccbcaba_
+#          ^
+#aaaabbbccc_
+#          ^
