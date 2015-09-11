@@ -9,7 +9,7 @@ public class TuringTransitionOutput<T> {
 	private Direction[] directions;
 
 	/** Creates a new instance.
-	 * @throw IllegalArgumentException if the amount of directions given doesn't match
+	 * @throws IllegalArgumentException if the amount of directions given doesn't match
 	 * the amount of ReadWriteData */
 	public TuringTransitionOutput(MultiTapeReadWriteData<T> toWrite, Direction... directions){
 		if(toWrite.getLength() != directions.length)
